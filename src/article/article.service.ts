@@ -24,8 +24,8 @@ export class ArticleService {
     return this.articleRepository.save(article);
   }
 
-  updateArticle(article: Article): Promise<Article> {
-    return this.articleRepository.save(article);
+  updateArticle(id: number, article: Article) {
+    return this.articleRepository.update(id, article);
   }
 
   deleteArticle(article: Article): void {

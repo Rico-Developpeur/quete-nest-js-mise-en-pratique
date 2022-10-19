@@ -29,9 +29,9 @@ export class ArticleController {
     return this.service.saveArticle(article);
   }
 
-  @Put()
-  update(@Body() article: Article) {
-    return this.service.updateArticle(article);
+  @Put(':id')
+  update(@Param() params, @Body() article: Article) {
+    return this.service.updateArticle(params.id, article);
   }
 
   @Delete(':id')
